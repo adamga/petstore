@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!--
 
-       Copyright ${license.git.copyrightYears} the original author or authors.
+       Copyright 2010-2019 the original author or authors.
 
        Licensed under the Apache License, Version 2.0 (the "License");
        you may not use this file except in compliance with the License.
@@ -169,12 +169,18 @@
 			<!-- or applicationinsights-web for manual web filter registration -->
 			<!-- or applicationinsights-core for bare API -->
 			<version>2.5.0</version>
-        </dependency>
-	  		<dependency>
+			</dependency>
+       <dependency>
+          <groupId>com.microsoft.azure</groupId>
+          <artifactId>applicationinsights-logging-log4j1_2</artifactId>
+          <version>[2.0,)</version>
+       </dependency>
+	   		<dependency>
 			<groupId>com.microsoft.azure</groupId>
-			<artifactId>applicationinsights-logging-logback</artifactId>
-			<version>2.3.1</version>
+			<artifactId>applicationinsights-spring-boot-starter</artifactId>
+			<version>1.1.1</version>
 		</dependency>
+
   </dependencies>
 
   <build>

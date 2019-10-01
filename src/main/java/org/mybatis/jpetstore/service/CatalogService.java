@@ -1,5 +1,5 @@
 /**
- *    Copyright ${license.git.copyrightYears} the original author or authors.
+ *    Copyright 2010-2019 the original author or authors.
  *
  *    Licensed under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License.
@@ -25,6 +25,9 @@ import org.mybatis.jpetstore.mapper.CategoryMapper;
 import org.mybatis.jpetstore.mapper.ItemMapper;
 import org.mybatis.jpetstore.mapper.ProductMapper;
 import org.springframework.stereotype.Service;
+// import org.slf4j.Logger;
+// import org.slf4j.LoggerFactory;
+import org.apache.log4j.Logger;
 
 /**
  * The Class CatalogService.
@@ -37,14 +40,18 @@ public class CatalogService {
   private final CategoryMapper categoryMapper;
   private final ItemMapper itemMapper;
   private final ProductMapper productMapper;
+  private static org.apache.log4j.Logger logger = Logger.getLogger(CatalogService.class);
 
   public CatalogService(CategoryMapper categoryMapper, ItemMapper itemMapper, ProductMapper productMapper) {
     this.categoryMapper = categoryMapper;
     this.itemMapper = itemMapper;
     this.productMapper = productMapper;
+    logger.info("Adam is a cool dude");
+    logger.error("Adam2 is a cool dude");
   }
 
   public List<Category> getCategoryList() {
+    logger.error("Adam is looking at Categories!");
     return categoryMapper.getCategoryList();
   }
 
@@ -53,7 +60,10 @@ public class CatalogService {
   }
 
   public Product getProduct(String productId) {
+    logger.info("Adam is looking at a Product");
+    logger.error("Adam2 is a cool dude");
     return productMapper.getProduct(productId);
+
   }
 
   public List<Product> getProductListByCategory(String categoryId) {
